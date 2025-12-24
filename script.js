@@ -31,3 +31,21 @@ navLinks.forEach((link) => {
     }
   });
 });
+
+// Tambahkan event listener pada semua link yang menuju ke ID internal
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      // Scroll ke elemen tujuan secara halus
+      targetElement.scrollIntoView({ behavior: "smooth" });
+
+      // Ganti URL bar kembali ke root tanpa tanda pagar
+      window.history.replaceState(null, null, " ");
+    }
+  });
+});
