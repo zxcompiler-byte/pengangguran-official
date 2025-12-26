@@ -215,3 +215,11 @@ nav ul li a.active-link span {
     box-shadow: 0 0 0 0 rgba(0, 179, 226, 0);
   }
 }
+  @keyframes slide {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-slide {
+    animation: slide 3s infinite ease-in-out;
+  }
